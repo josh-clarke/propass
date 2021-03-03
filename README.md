@@ -102,10 +102,16 @@ node propass.js --lengthpass 20
 These examples all use the short flags, which are easier to type. You can view these examples using the `--help` flag.
 
 ```cli
-propass.js                     # Generates 3 password options with the default settings
-propass.js -l 18               # Generates 3 password options wthat are 18 characters long
-propass.js -p 10 -s 2 -n 3 -c  # Generates 10 password options with 2 symbols, 3 numbers, and capitals mixed with lowercase
-propass.js -p 5 -mc            # Generates 5 password options with capital letters and the numbers and symbols mixed in
+propass.js                     # Generates 3 password options 
+                                 with the default settings
+propass.js -l 18               # Generates 3 password options 
+                                 that are 18 characters long
+propass.js -p 10 -s 2 -n 3 -c  # Generates 10 password options 
+                                 with 2 symbols, 3 numbers, and 
+                                 capitals mixed with lowercase
+propass.js -p 5 -mc            # Generates 5 password options 
+                                 with capital letters and the 
+                                 numbers and symbols mixed in
 ```
 
 ## Customization
