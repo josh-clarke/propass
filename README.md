@@ -102,7 +102,7 @@ propass.js -p 5 -mc            # Generates 5 password options with capital lette
 
 ## Customization
 
-The generator relies on a JSON file called `syllables.json` which can be modified to add or remove consonants, vowels, numbers, and symbols.
+The generator relies on a JSON file called [`syllables.json`](https://github.com/josh-clarke/propass/blob/main/syllables.json) which can be modified to add or remove consonants, vowels, numbers, and symbols.
 
 ## Included Modules
 
