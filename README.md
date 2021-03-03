@@ -72,6 +72,8 @@ The length of the password options can be changed with the `--lengthpass` or `-l
 node propass.js --lengthpass 20
 ```
 
+> Some sources suggest that a good password is [at least 12 characters](https://resources.infosecinstitute.com/topic/password-security-complexity-vs-length/). A[16 character all lowercase passwords would take 208 billion minutes to crack](https://specopssoft.com/blog/password-length-best-practices/) with today's computers.
+
 ### Numbers and Symbols
 
 The amount of numbers or symbols in a password can be set with `--numbers` or `-n` and `-symbols` or `-s`, respectively. Keep in mind that these options do not change the total length of the password, so additional numbers and symbols will reduce the number of letters in the password unless you lengthen the password with the `--lengthpass` flag.
@@ -95,8 +97,6 @@ If you want the numbers and symbols randomly mixed into the password, you can ca
 ```cli
 node propass.js --mix
 ```
-
-> Some sources suggest that a good password is [at least 12 characters](https://resources.infosecinstitute.com/topic/password-security-complexity-vs-length/). A[16 character all lowercase passwords would take 208 billion minutes to crack](https://specopssoft.com/blog/password-length-best-practices/) with today's computers.
 
 > The command-line examples all use `node propass.js` for compatibility, but the script includes a hashbang. In a Bash/ZSH shell you should be able to `chmod +x propass.js` and then execute `./propass.js` directly. 
 
