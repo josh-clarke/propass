@@ -72,7 +72,7 @@ The length of the password options can be changed with the `--lengthpass` or `-l
 node propass.js --lengthpass 20
 ```
 
-> Some sources suggest that a good password is [at least 12 characters](https://resources.infosecinstitute.com/topic/password-security-complexity-vs-length/). A [16 character all lowercase password would take 208 billion minutes to crack](https://specopssoft.com/blog/password-length-best-practices/) with today's computers.
+> One source suggests that a good password is [at least 12 characters](https://resources.infosecinstitute.com/topic/password-security-complexity-vs-length/). Another suggests that a [16 character all lowercase password would take 208 billion minutes to crack](https://specopssoft.com/blog/password-length-best-practices/) with today's computers.
 
 ### Numbers and Symbols
 
