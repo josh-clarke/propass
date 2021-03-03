@@ -9,6 +9,11 @@ It could also be used for creating random usernames or for anything where you mi
 * [Installation](#installation)
 * [Quick Start](#quick-start)
 * [Advanced Usage](#advanced-usage)
+  * [Numbers and Symbols](#numbers-and-symbols)
+  * [Capital Letters](#capital-letters)
+  * [Mixed Passwords](#mixed-passwords)
+  * [Number of Passwords](#number-of-passwords)
+  * [Password Length](#password-length)
 * [Usage Examples](#usage-examples)
 * [Customization](#customization)
 * [Included Modules](#included-modules)
@@ -25,11 +30,13 @@ cd propass
 
 ## Quick Start
 
+Calling the script on its own generates three password options with the default settings.
+
 ```cli
 node propass.js
 ```
 
-Calling the script on its own generates three password options with the default settings of:
+This will result in 3 password options each with 10 lowercase letters and ending with a symbol and two numbers. The full default settings are:
 
 * **3** password options 
 * **13** character length
@@ -37,49 +44,18 @@ Calling the script on its own generates three password options with the default 
 * **2** numbers
 * lowercase letters will fill out the remaining length
 
-The symbol and number appear at the end by default for pronounceability.
-
 You can view all the options and some examples with the `--help` flag.
 
 ```cli
 node propass.js --help
 ```
 
-When you have chosen your password, I recommend executing the `clear` command to wipe the password options from the terminal display. **Note:** This will also wipe any other output from the the terminal that you have entered this session.
+> When you have chosen your password, I recommend executing the `clear` command to wipe the password options from the terminal display. **Note:** This will also wipe any other output from the the terminal that you have entered this session.
 
-```cli
-clear
-```
-
-> The command-line examples all use `node propass.js` for compatibility, but the script includes a hashbang. In a Bash/ZSH shell you should be able to `chmod +x propass.js` and then execute `./propass.js` directly. 
 
 ## Advanced Usage
 
-If you need capitals, you can call the `--caps` or `-c` flag. This will capitalize all the consonants, which typically results in 3 capitals for passwords using the default settings. 
-
-```cli
-node propass.js --caps
-```
-
-If you want the numbers and symbols randomly mixed into the password, you can call the `--mix` or `-m` flag. This may reduce pronounceability.
-
-```cli
-node propass.js --mix
-```
-
-You can set how many password options you get with `--passwords` or `-p` flag. The examples will list 25 passwords.
-
-```cli
-node propass.js --passwords 25
-```
-
-The length of the password options can be changed with the `--lengthpass` or `-l` flag. The examples will list 3 passwords that are 20 characters long.
-
-```cli
-node propass.js --lengthpass 20
-```
-
-> A post on an information security blog references a study that says a good password is [at least 12 characters](https://resources.infosecinstitute.com/topic/password-security-complexity-vs-length/), and a post from another blog says that [16 character all lowercase passwords would take 208 billion minutes to crack](https://specopssoft.com/blog/password-length-best-practices/) with today's computers.
+## Numbers and Symbols
 
 The amount of numbers or symbols in a password can be set with `--numbers` or `-n` and `-symbols` or `-s`, respectively. Keep in mind that these options do not change the total length of the password, so additional numbers and symbols will reduce the number of letters in the password unless you lengthen the password with the `--lengthpass` flag.
 
@@ -88,6 +64,38 @@ The example creates 3 options each with 3 numbers and 3 symbols. The length has 
 ```cli
 node propass.js --symbols 3 --numbers 3 --lengthpass 16
 ```
+
+### Capital Letters
+If you need capitals, you can call the `--caps` or `-c` flag. This will capitalize all the consonants, which typically results in 3 capitals for passwords using the default settings. 
+
+```cli
+node propass.js --caps
+```
+
+### Mixed Passwords
+If you want the numbers and symbols randomly mixed into the password, you can call the `--mix` or `-m` flag. This may reduce pronounceability.
+
+```cli
+node propass.js --mix
+```
+
+### Number of Passwords
+You can set how many password options you get with the `--passwords` or `-p` flag. The example will list 25 passwords.
+
+```cli
+node propass.js --passwords 25
+```
+
+### Password Length
+The length of the password options can be changed with the `--lengthpass` or `-l` flag. The example will list 3 passwords that are 20 characters long.
+
+```cli
+node propass.js --lengthpass 20
+```
+
+> Some sources suggest that a good password is [at least 12 characters](https://resources.infosecinstitute.com/topic/password-security-complexity-vs-length/). A[16 character all lowercase passwords would take 208 billion minutes to crack](https://specopssoft.com/blog/password-length-best-practices/) with today's computers.
+
+> The command-line examples all use `node propass.js` for compatibility, but the script includes a hashbang. In a Bash/ZSH shell you should be able to `chmod +x propass.js` and then execute `./propass.js` directly. 
 
 ## Usage Examples
 
