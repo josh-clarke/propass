@@ -1,0 +1,12 @@
+{
+  "name": "pronounceable-password-generator",
+  "version": "1.0.0",
+  "description": "Generates passwords that are more memorable, with options for numbers and special characters.",
+  "main": "propass.js",
+  "author": "Joshua Clarke",
+  "license": "MIT",
+  "dependencies": {
+    "random-seed": "^0.3.0",
+    "yargs": "^16.2.0"
+  }
+}
