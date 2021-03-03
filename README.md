@@ -4,7 +4,7 @@ Pronounceable Password Generator (`propass.js`) is a NodeJS script that generate
 
 It could also be used for creating random usernames or for anything where you might want a unique pronounceable string.
 
-<img alt="Screenshot of propass.js being used in the terminal." title="Warning: Using these samples is not recommended!" src="/screenshot.png">
+<img alt="Screenshot of propass.js being used in the terminal." title="Warning: Using these samples as passwords is not recommended!" src="/screenshot.png">
 
 ## Contents
 
