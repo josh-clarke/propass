@@ -57,6 +57,26 @@ yargs
         describe: 'Mix the symbols and numbers randomly into the password',
         type: 'boolean'
     })
+    .requiresArg(['p', 'l', 'n', 's'])
+    .strictOptions()
+    .check((argv, options) => {
+        if (argv.p < 1 || argv.p > 250) {
+            throw new Error('Please specify a number of passwords between 1 and 250.\n\n“Form is emptiness; emptiness is form. Emptiness is none other than form; form is none other than emptiness.” —The Heart Sutra')
+        } else if (argv.l < 10 || argv.l > 128) {
+            throw new Error('Please specify a password length of 10 or greater and up to 128.')
+        } else if (argv.n < 0) {
+            throw new Error('Please specify zero or a positive amount of number characters.')
+        }else if (argv.s < 0) {
+            throw new Error('Please specify zero or a positive amount of symbol characters.')
+        }else if (argv.n + argv.s > argv.l) {
+            throw new Error('Please specify a total amount of numbers and symbols are equal to or less than the total length of the password.')
+        }else if (isNaN(argv.p) || isNaN(argv.l) || isNaN(argv.n) || isNaN(argv.s) ) {
+            throw new Error('Only numbers are accepted as input values.')
+        }else{
+            return true;
+        }
+    })
+    .showHelpOnFail(false, 'Specify --help for available options')
     .help()
     .argv
 
