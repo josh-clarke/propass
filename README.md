@@ -9,11 +9,11 @@ It could also be used for creating random usernames or for anything where you mi
 * [Installation](#installation)
 * [Quick Start](#quick-start)
 * [Advanced Usage](#advanced-usage)
+  * [Number of Passwords](#number-of-passwords)
+  * [Password Length](#password-length)
   * [Numbers and Symbols](#numbers-and-symbols)
   * [Capital Letters](#capital-letters)
   * [Mixed Passwords](#mixed-passwords)
-  * [Number of Passwords](#number-of-passwords)
-  * [Password Length](#password-length)
 * [Usage Examples](#usage-examples)
 * [Customization](#customization)
 * [Included Modules](#included-modules)
@@ -36,7 +36,7 @@ Calling the script on its own generates three password options with the default 
 node propass.js
 ```
 
-This will result in 3 password options each with 10 lowercase letters and ending with a symbol and two numbers. The full default settings are:
+The full default settings are:
 
 * **3** password options 
 * **13** character length
@@ -54,6 +54,20 @@ node propass.js --help
 
 
 ## Advanced Usage
+
+### Number of Passwords
+You can set how many password options you get with the `--passwords` or `-p` flag. The example will list 25 passwords.
+
+```cli
+node propass.js --passwords 25
+```
+
+### Password Length
+The length of the password options can be changed with the `--lengthpass` or `-l` flag. The example will list 3 passwords that are 20 characters long.
+
+```cli
+node propass.js --lengthpass 20
+```
 
 ### Numbers and Symbols
 
@@ -77,20 +91,6 @@ If you want the numbers and symbols randomly mixed into the password, you can ca
 
 ```cli
 node propass.js --mix
-```
-
-### Number of Passwords
-You can set how many password options you get with the `--passwords` or `-p` flag. The example will list 25 passwords.
-
-```cli
-node propass.js --passwords 25
-```
-
-### Password Length
-The length of the password options can be changed with the `--lengthpass` or `-l` flag. The example will list 3 passwords that are 20 characters long.
-
-```cli
-node propass.js --lengthpass 20
 ```
 
 > Some sources suggest that a good password is [at least 12 characters](https://resources.infosecinstitute.com/topic/password-security-complexity-vs-length/). A[16 character all lowercase passwords would take 208 billion minutes to crack](https://specopssoft.com/blog/password-length-best-practices/) with today's computers.
