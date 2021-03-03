@@ -83,7 +83,7 @@ node propass.js --symbols 3 --numbers 3 --lengthpass 16
 ```
 
 ### Capital Letters
-If you need capitals, you can call the `--caps` or `-c` flag. This will capitalize all the consonants, which typically results in 3 capitals for passwords using the default settings. 
+If you need capitals, you can call the `--caps` or `-c` flag. This will capitalize the first consonants of a syllable, which typically results in 3 capitals for passwords using the default settings. 
 
 ```cli
 node propass.js --caps
