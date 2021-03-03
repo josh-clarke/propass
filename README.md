@@ -21,10 +21,7 @@ It could also be used for creating random usernames or for anything where you mi
 ```cli
 git clone https://github.com:josh-clarke/propass.git
 cd propass
-yarn install
 ```
-
-> If you get a `command not found` when running `yarn`, run `npm install -g yarn` and then try running `yarn install` again.
 
 ## Quick Start
 
