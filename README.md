@@ -76,7 +76,7 @@ node propass.js --lengthpass 20
 
 ### Numbers and Symbols
 
-The amount of numbers or symbols in a password can be set with `--numbers` or `-n` and `-symbols` or `-s`, respectively. Keep in mind that these options do not change the total length of the password, so additional numbers and symbols will reduce the number of letters in the password unless you lengthen the password with the `--lengthpass` flag.
+The amount of numbers or symbols in a password can be set with `--numbers` or `-n` and `-symbols` or `-s`, respectively. Keep in mind that these options do not change the total length of the password, so additional numbers and symbols will reduce the number of letters in the password unless you lengthen the password.
 
 The example creates passwords that include 3 numbers and 3 symbols. The length has also been set to 16 total characters.
 
