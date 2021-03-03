@@ -63,7 +63,7 @@ node propass.js --passwords 25
 ```
 
 ### Password Length
-The length of the password options can be changed with the `--lengthpass` or `-l` flag. The example will list 3 passwords that are 20 characters long.
+The length of the password options can be changed with the `--lengthpass` or `-l` flag. The example will list passwords that are 20 characters long.
 
 ```cli
 node propass.js --lengthpass 20
@@ -73,7 +73,7 @@ node propass.js --lengthpass 20
 
 The amount of numbers or symbols in a password can be set with `--numbers` or `-n` and `-symbols` or `-s`, respectively. Keep in mind that these options do not change the total length of the password, so additional numbers and symbols will reduce the number of letters in the password unless you lengthen the password with the `--lengthpass` flag.
 
-The example creates 3 options each with 3 numbers and 3 symbols. The length has also been set to 16 total characters.
+The example creates passwords that include 3 numbers and 3 symbols. The length has also been set to 16 total characters.
 
 ```cli
 node propass.js --symbols 3 --numbers 3 --lengthpass 16
