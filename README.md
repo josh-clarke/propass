@@ -25,9 +25,9 @@ It could also be used for creating random usernames or for anything where you mi
 
 ### Binary Releases
 
-The latest releases have been packaged as standalone binaries for [MacOS](https://github.com/josh-clarke/propass/releases/), [Linux](https://github.com/josh-clarke/propass/releases/), and [Windows](https://github.com/josh-clarke/propass/releases/).
+The latest releases have been packaged as standalone binaries for [MacOS](https://github.com/josh-clarke/propass/releases/latest), [Linux](https://github.com/josh-clarke/propass/releases/latest), and [Windows](https://github.com/josh-clarke/propass/releases/latest).
 
-1. Download the [latest release](https://github.com/josh-clarke/propass/releases/) zip file for your operating system.
+1. Download the [latest release](https://github.com/josh-clarke/propass/releases/latest) zip file for your operating system.
 2. Unzip the file where you would like to keep it.
 3. Use your terminal to enter the propass directory.
 
