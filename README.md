@@ -9,6 +9,8 @@ It could also be used for creating random usernames or for anything where you mi
 ## Contents
 
 * [Installation](#installation)
+  * [Binary Releases](#binary-releases)
+  * [Run as a NodeJS Script](#run-as-a-nodejs-script)
 * [Quick Start](#quick-start)
 * [Advanced Usage](#advanced-usage)
   * [Number of Passwords](#number-of-passwords)
