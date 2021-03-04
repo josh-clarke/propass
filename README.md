@@ -165,7 +165,7 @@ npm install
 npm install -g pkg
 ```
 
-4. Run `./build.sh` in a MacOS or Linux terminal, or in a WSL terminal on Windows. By default it will build binaries for MacOS, Linux, and Windows. They will appear in a folder called `./build` as .zip files. The `build.sh` script should be easy to figure out and modify to suit your needs.
+5. Run `./build.sh` in a MacOS or Linux terminal, or in a WSL terminal on Windows. By default it will build binaries for MacOS, Linux, and Windows. They will appear in a folder called `./build` as .zip files. The `build.sh` script should be easy to figure out and modify to suit your needs.
 
 ## Included Modules
 
