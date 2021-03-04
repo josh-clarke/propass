@@ -1,5 +1,11 @@
 #! /usr/bin/env bash
 
+if ! command -v pkg &> /dev/null
+then
+    echo "The command 'pkg' could not be found.\n\nPlease install with 'npm install -g pkg' and try again."
+    exit
+fi
+
 pkg --out-path ./build/propass-win -t node10-win propass.js && \
 pkg --out-path ./build/propass-mac -t node10-macos propass.js && \
 pkg --out-path ./build/propass-lin -t node10-linux propass.js && \
