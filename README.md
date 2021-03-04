@@ -159,13 +159,19 @@ npm install
 
 3. Make any changes that you want to the code or `syllables.json` file.
 
-4. Install the NodeJS module `pkg`. It is used to build the binaries.
+4. Install the NodeJS module [`pkg`](https://www.npmjs.com/package/pkg). It is used to build the binaries.
 
 ```cli
 npm install -g pkg
 ```
 
-5. Run `./build.sh` in a MacOS or Linux terminal, or in a WSL terminal on Windows. By default it will build binaries for MacOS, Linux, and Windows. They will appear in a folder called `./build` as .zip files. The `build.sh` script should be easy to figure out and modify to suit your needs.
+5. Run `./build.sh` in a MacOS or Linux terminal, or in a WSL terminal on Windows. 
+
+```cli
+./build.sh
+```
+
+By default the build script will build binaries for MacOS, Linux, and Windows and bundle them in a .zip archive with the README and LICENSE files. They will appear in a folder called `./build`. The `build.sh` script should be easy to figure out and modify to suit your needs.
 
 ## Included Modules
 
