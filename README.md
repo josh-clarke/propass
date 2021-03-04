@@ -35,7 +35,7 @@ The latest releases have been packaged as standalone binaries for [MacOS](https:
 
 On MacOS and Linux, you may need to `chmod +x propass` to make it executable. If you will be using `propass` often, you might wish to place it in your PATH.
 
-### Run as NodeJS Script
+### Run as a NodeJS Script
 
 **Note**: NodeJS should already be [installed](https://nodejs.dev/learn/how-to-install-nodejs) on your system.
 
