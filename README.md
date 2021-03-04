@@ -1,6 +1,6 @@
 # Pronounceable Password Generator
 
-Pronounceable Password Generator (`propass.js`) is a NodeJS script that generates strings of characters in the command line that are ordered in a way that is pronounceable and possibly easier to remember if you wish to memorize them.
+Pronounceable Password Generator is a NodeJS script that generates strings of characters in the command line that are ordered in a way that is pronounceable and possibly easier to remember if you wish to memorize them.
 
 It could also be used for creating random usernames or for anything where you might want a unique pronounceable string.
 
