@@ -231,11 +231,11 @@ function shuffleArray(arr) {
     let id = arr.length
     while (0 !== id) {
         let randomId = rand(id)
-        id -= 1;
+        id -= 1
 
         let tmp = arr[id]
         arr[id] = arr[randomId]
-        arr[randomId] = tmp;
+        arr[randomId] = tmp
     }
     return arr
     // https://www.w3docs.com/snippets/javascript/how-to-randomize-shuffle-a-javascript-array.html
