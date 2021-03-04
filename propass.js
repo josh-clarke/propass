@@ -101,66 +101,42 @@ function generatePassword(passwordLength = 13, numbersLength = 2, symbolsLength 
         
         // Word Creator
         for (x = 0; x < word; x++) {
-            let rConsonants = rand(syllables.singleConsonants.length)
-            let rVowels = rand(syllables.singleVowels.length)
-            let rdConsonants = rand(syllables.doubleConsonants.length)
-            let rdVowels = rand(syllables.doubleVowels.length)
             
             if (word < 10 | x < 2 | x > word - 3 ) {
-                let consonant = capConsonant(syllables.singleConsonants[rConsonants], caps);
-                let segment = '';
-
-                if(precedence) {
-                    segment += consonant
-                    segment += syllables.singleVowels[rVowels]
-                }else{                    
-                    segment += syllables.singleVowels[rVowels]
-                    segment += consonant
-                }
-
-                password.push(segment)
+                password.push(doubleSegment(caps, precedence))
                 x = x + 1
             } else if (x > 2 && x < word - 3) {
                 if ((word - x) % 3 == 0) {
-                    let consonant = capConsonant(syllables.doubleConsonants[rdConsonants], caps);
-                    let segment = '';
-
-                    if(precedence) {
-                        segment += consonant
-                        segment += syllables.singleVowels[rVowels]
-                    }else{
-                        segment += syllables.singleVowels[rVowels]
-                        segment += consonant                        
-                    }
-
-                    password.push(segment)
+                    password.push(tripleSegment(caps, precedence))
                     x = x + 2
                 } else if ((word - x) % 4 == 0) {
-                    let consonant = capConsonant(syllables.doubleConsonants[rdConsonants], caps);
-                    let segment = '';
-
-                    if(precedence) {
-                        segment += consonant
-                        segment += syllables.doubleVowels[rdVowels]
+                    let segment = ''
+                    let doubleOrQuadruple = rand(2)
+                    
+                    if(doubleOrQuadruple == 0) {
+                        segment = doubleSegment(caps, precedence)
+                        segment += doubleSegment(caps, precedence)
                     }else{
-                        segment += syllables.doubleVowels[rdVowels]
-                        segment += consonant
+                        segment = quadrupleSegment(caps, precedence)
                     }
 
                     password.push(segment)
                     x = x + 3
                 } else if ((word - x) % 2 == 0) {
-                    let segment = '';
+                    let segment = ''
+                    let doubleOrVowels = rand(2)
 
-                    segment += syllables.doubleVowels[rdVowels]
+                    if(doubleOrVowels == 0) {
+                        segment = doubleSegment(caps, precedence)
+                    }else{
+                        segment = setLetter(syllables.doubleVowels)
+                    }
 
                     password.push(segment)
                     x = x + 1
                 } else if ((word - x) % 1 == 0) {
                     // If it's prime!
-                    let segment = '';
-
-                    segment += syllables.singleVowels[rVowels]
+                    let segment = setLetter(syllables.singleVowels)
 
                     password.push(segment)
                 }
@@ -192,6 +168,51 @@ function generatePassword(passwordLength = 13, numbersLength = 2, symbolsLength 
     console.log(passwordOptions)
 }
 
+function doubleSegment(caps, precedence) {
+    let consonant = capConsonant(setLetter(syllables.singleConsonants), caps);
+    let vowel = setLetter(syllables.singleVowels)
+    let segment = '';
+
+    if(precedence) {
+        segment += consonant
+        segment += vowel
+    }else{                    
+        segment += vowel
+        segment += consonant
+    }
+    return segment
+}
+
+function tripleSegment(caps, precedence) {
+    let consonant = capConsonant(setLetter(syllables.doubleConsonants), caps);
+    let vowel = setLetter(syllables.singleVowels)
+    let segment = '';
+
+    if(precedence) {
+        segment += consonant
+        segment += vowel
+    }else{
+        segment += vowel
+        segment += consonant                        
+    }
+    return segment
+}
+
+function quadrupleSegment(caps, precedence) {
+    let consonant = capConsonant(setLetter(syllables.doubleConsonants), caps);
+    let vowel = setLetter(syllables.doubleVowels)
+    let segment = '';
+
+    if(precedence) {
+        segment += consonant
+        segment += vowel
+    }else{
+        segment += vowel
+        segment += consonant
+    }
+    return segment
+}
+
 function capConsonant(consonant, caps) {
     if(consonant.length < 2) {
         return consonant = caps ? consonant.toUpperCase() : consonant
@@ -212,4 +233,55 @@ function shuffleArray(arr) {
     }
     return arr
     // https://www.w3docs.com/snippets/javascript/how-to-randomize-shuffle-a-javascript-array.html
+}
+
+function setLetter(letterOptions) {
+    let isChecking = true
+    let letter = ''
+    let blacklist = []
+
+    while (isChecking) {
+        let thisOption = rand(letterOptions.length)
+
+        if(!blacklistCheck(thisOption)) {
+            let letterSet = letterOptions[thisOption]
+
+            if(weightCheck(letterSet[1])) {
+                letter = letterSet[0]
+                isChecking = false
+            }else{
+                blacklist.push(thisOption)
+            }
+        }
+
+        if(blacklist.length == letterOptions.length) {
+            blacklist = []
+        }
+    }
+    return letter
+}
+
+function blacklistCheck(blacklist, thisOption) {
+    let isBlacklisted = false
+
+    if (blacklist.length > 0) {
+        for(x = 0; x < blacklist.length; x++) {
+            if (thisOption == blacklist[x]) {
+                isBlacklisted == true
+                break
+            }
+        }                
+    }
+
+    return isBlacklisted
+}
+
+function weightCheck(weight) {
+    let d20 = rand(20) + 1
+
+    if (d20 >= weight) {
+        return true;
+    }
+
+    return false;
 }

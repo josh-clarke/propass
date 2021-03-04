@@ -121,6 +121,8 @@ propass.js -p 5 -mc            # Generates 5 password options
 
 The generator relies on a JSON file called [`syllables.json`](https://github.com/josh-clarke/propass/blob/main/syllables.json) which can be modified to add or remove consonants, vowels, numbers, and symbols.
 
+On 2021-03-03 weights have been added to the letters. Essentially the script rolls a d20 to determine whether the randomly selected letter is used. If not, it randomly picks a new letter and tries again. The letters are roughly weighted by their use in English, with weights from 1 to 20. A low number means the letter will be selected more often, and a high number means it will be selected less often.
+
 ## Included Modules
 
 This script makes use of the [random-seed](https://github.com/skratchdot/random-seed) module, which is a NodeJS port of the [Gibson Research Corporation's Ultra-High Entropy Pseudo-Random Number Generator](https://www.grc.com/otg/uheprng.htm).
