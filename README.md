@@ -121,7 +121,9 @@ propass.js -p 5 -mc            # Generates 5 password options
 
 The generator relies on a JSON file called [`syllables.json`](https://github.com/josh-clarke/propass/blob/main/syllables.json) which can be modified to add or remove consonants, vowels, numbers, and symbols.
 
-On 2021-03-03 weights have been added to the letters. Essentially the script rolls a d20 to determine whether the randomly selected letter is used. If not, it randomly picks a new letter and tries again. The letters are roughly weighted by their use in English, with weights from 1 to 20. A low number means the letter will be selected more often, and a high number means it will be selected less often.
+On 2021-03-03 weights have been added to the letters. Essentially the script rolls a <abbr title="Twenty-sided die">d20</abbr> to determine whether the randomly selected letter is used. If not, it randomly picks a new letter and tries again. The letters are roughly weighted by their use in English, with weight ratings from 1 to 20. A low number means the letter will be selected more often and a high number means it will be selected less often.
+
+The `--unweighted` or `-w` flag can be used to ignore the letter weights.
 
 ## Included Modules
 

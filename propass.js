@@ -57,6 +57,12 @@ yargs
         describe: 'Mix the symbols and numbers randomly into the password',
         type: 'boolean'
     })
+    .option ('w', {
+        alias: 'unweighted',
+        default: false,
+        describe: 'Ignore the weighting for letter selection',
+        type: 'boolean'
+    })
     .requiresArg(['p', 'l', 'n', 's'])
     .strictOptions()
     .check((argv, options) => {
@@ -279,7 +285,7 @@ function blacklistCheck(blacklist, thisOption) {
 function weightCheck(weight) {
     let d20 = rand(20) + 1
 
-    if (d20 >= weight) {
+    if (!yargs.argv.unweighted || d20 >= weight) {
         return true;
     }
 
