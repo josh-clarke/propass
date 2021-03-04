@@ -20,6 +20,7 @@ It could also be used for creating random usernames or for anything where you mi
   * [Mixed Passwords](#mixed-passwords)
 * [Usage Examples](#usage-examples)
 * [Customization](#customization)
+* [Build Binaries from Source](#build-binaries-from-source)
 * [Included Modules](#included-modules)
 * [License](#license)
 
@@ -130,16 +131,41 @@ propass -p 5 -mc                 # Generates 5 password options
                                  with capital letters and the 
                                  numbers and symbols mixed in
 ```
-
 ## Customization
 
 The generator relies on a JSON file called [`syllables.json`](https://github.com/josh-clarke/propass/blob/main/syllables.json) which can be modified to add or remove consonants, vowels, numbers, and symbols. 
 
-> **Note:** The binary version of this script bundles `syllables.json` into itself. If you want to modify the `syllables.json`, you can `git clone` the script and modify the `syllables.json` file that way. If you want to package your modifications into a new binary, you can use [pkg](https://www.npmjs.com/package/pkg) to rebuild a fresh binary for your platform.
-
-On 2021-03-03 weights have been added to the letters. Essentially the script rolls a <abbr title="Twenty-sided die">d20</abbr> to determine whether the randomly selected letter is used. If not, it randomly picks a new letter and tries again. The letters are roughly weighted by their use in English, with weight ratings from 1 to 20. A low number means the letter will be selected more often and a high number means it will be selected less often.
+The letters are weighted. Essentially the script rolls a <abbr title="Twenty-sided die">d20</abbr> to determine whether the randomly selected letter is used. If not, it randomly picks a new letter and tries again. The letters are roughly weighted by their use in English, with weight ratings from 1 to 20. A low number means the letter will be selected more often and a high number means it will be selected less often.
 
 The `--unweighted` or `-w` flag can be used to ignore the letter weights.
+
+> **Note:** The binary version of this script bundles `syllables.json` into itself. If you want to modify the `syllables.json`, you can `git clone` and hack the code, and then [build the binaries from source](#build-binaries-from-source).
+
+
+## Build Binaries from Source
+
+1. Clone the repository.
+
+```cli
+git clone https://github.com:josh-clarke/propass.git
+```
+
+2. Enter the directory and install the node module dependencies.
+
+```cli
+cd propass
+npm install
+```
+
+3. Make any changes that you want to the code or `syllables.json` file.
+
+4. Install the NodeJS module `pkg`. It is used to build the binaries.
+
+```cli
+npm install -g pkg
+```
+
+4. Run `./build.sh` in a MacOS or Linux terminal, or in a WSL terminal on Windows. By default it will build binaries for MacOS, Linux, and Windows. They will appear in a folder called `./build` as .zip files. The `build.sh` script should be easy to figure out and modify to suit your needs.
 
 ## Included Modules
 
