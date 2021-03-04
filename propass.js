@@ -13,7 +13,7 @@ const syllables = require('./syllables.json')
  */
 
 yargs
-    .scriptName('propass.js')
+    .scriptName('propass')
     .usage('$0 <cmd> [args]')
     .example([
         ['$0', 'Generates 3 password options with the defaults'],
