@@ -248,46 +248,22 @@ function setLetter(letterOptions) {
 
     while (isChecking) {
         let thisOption = rand(letterOptions.length)
+        let letterSet = letterOptions[thisOption]
 
-        if(!blacklistCheck(thisOption)) {
-            let letterSet = letterOptions[thisOption]
-
-            if(weightCheck(letterSet[1])) {
-                letter = letterSet[0]
-                isChecking = false
-            }else{
-                blacklist.push(thisOption)
-            }
-        }
-
-        if(blacklist.length == letterOptions.length) {
-            blacklist = []
+        if(weightCheck(letterSet[1])) {
+            letter = letterSet[0]
+            isChecking = false
         }
     }
     return letter
 }
 
-function blacklistCheck(blacklist, thisOption) {
-    let isBlacklisted = false
-
-    if (blacklist.length > 0) {
-        for(x = 0; x < blacklist.length; x++) {
-            if (thisOption == blacklist[x]) {
-                isBlacklisted == true
-                break
-            }
-        }                
-    }
-
-    return isBlacklisted
-}
-
 function weightCheck(weight) {
     let d20 = rand(20) + 1
 
-    if (!yargs.argv.unweighted || d20 >= weight) {
-        return true;
+    if (yargs.argv.unweighted || d20 >= weight) {
+        return true
     }
 
-    return false;
+    return false
 }
