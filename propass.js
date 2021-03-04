@@ -94,7 +94,7 @@ generatePassword(yargs.argv.lengthpass, yargs.argv.numbers, yargs.argv.symbols, 
  * Generates password based on values specified
  */
 
-function generatePassword(passwordLength = 13, numbersLength = 2, symbolsLength = 0,optionsLength = 3, caps = true, mix = false) {
+function generatePassword(passwordLength, numbersLength, symbolsLength, optionsLength, caps = false, mix = false) {
     
     let passwordOptions = ''
     let trimValue = numbersLength + symbolsLength
@@ -108,10 +108,10 @@ function generatePassword(passwordLength = 13, numbersLength = 2, symbolsLength 
         // Word Creator
         for (x = 0; x < word; x++) {
             
-            if (word < 10 | x < 2 | x > word - 3 ) {
+            if (x < 2 | x > word - 4 ) {
                 password.push(doubleSegment(caps, precedence))
                 x = x + 1
-            } else if (x > 2 && x < word - 3) {
+            } else if (x >= 2 && x <= word - 4) {
                 if ((word - x) % 3 == 0) {
                     password.push(tripleSegment(caps, precedence))
                     x = x + 2
