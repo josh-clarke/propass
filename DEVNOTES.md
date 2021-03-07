@@ -1,12 +1,12 @@
 # Developer Notes
 
-This repository has been a learning experience for me on using node.js, ES6+, Typescript, and modern developer workflows. This Markdown file offers some insight into the files in this repository and a list of some resources that I have referenced.
+This repository has been a learning experience for me on using node.js, ES6+, TypeScript, and modern developer workflows. This Markdown file offers some insight into the files in this repository and a list of some resources that I have referenced.
 
 ## File Notes
 
 This offers some explanation definition of the files in this project. It includes basic and more advanced notes. 
 
-* [`.gitignore`](https://github.com/josh-clarke/propass/blob/main/.gitignore) - This is a simple hidden text file to tell the `git` version control system what files or directories to ignore.
+**[`.gitignore`](https://github.com/josh-clarke/propass/blob/main/.gitignore)** - This is a simple hidden text file to tell the `git` version control system what files or directories to ignore.
 
 ```
 *.DS_Store*       # Ignore MacOS folder preferences file
@@ -17,7 +17,7 @@ build/*           # Ignore the binary builds folder. It's unneccessary to commit
                   # when you can just build them if and when you need them.
 ```
 
-* [`babel.config.json`](https://github.com/josh-clarke/propass/blob/main/babel.config.json) - This file lets the Babel compiler know some project specific options for compiling this project.
+**[`babel.config.json`](https://github.com/josh-clarke/propass/blob/main/babel.config.json)** - This file lets the Babel compiler know some project specific options for compiling this project.
 
 Here, we let Babel know it is converting from TypeScript:
 
@@ -35,7 +35,7 @@ Then we tell Babel to output JavaScript that is compatible with the latest node.
         "node": "current"           
 ```
 
-* [`build.sh`](https://github.com/josh-clarke/propass/blob/main/build.sh) - This is a `bash` shell script that builds and packages the standalone binaries for MacOS, Linux, and Windows. It requires that the node.js module `pkg` is installed globally. 
+** [`build.sh`](https://github.com/josh-clarke/propass/blob/main/build.sh)**  - This is a `bash` shell script that builds and packages the standalone binaries for MacOS, Linux, and Windows. It requires that the node.js module `pkg` is installed globally. 
 
 ```bash
 # build.sh
