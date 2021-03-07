@@ -17,6 +17,7 @@
     "@types/random-seed": "^0.3.3",
     "@types/yargs": "^16.0.0",
     "babel-cli": "^6.26.0",
+    "embedme": "^1.22.0",
     "ts-standard": "^10.0.0",
     "typescript": "^4.2.3",
     "yargs": "^16.2.0"
