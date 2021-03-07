@@ -35,7 +35,7 @@ Then we tell Babel to output JavaScript that is compatible with the latest node.
         "node": "current"           
 ```
 
-** [`build.sh`](https://github.com/josh-clarke/propass/blob/main/build.sh)**  - This is a `bash` shell script that builds and packages the standalone binaries for MacOS, Linux, and Windows. It requires that the node.js module `pkg` is installed globally. 
+**[`build.sh`](https://github.com/josh-clarke/propass/blob/main/build.sh)**  - This is a `bash` shell script that builds and packages the standalone binaries for MacOS, Linux, and Windows. It requires that the node.js module `pkg` is installed globally. 
 
 ```bash
 # build.sh
