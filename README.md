@@ -1,8 +1,10 @@
 # Pronounceable Password Generator
 
-Pronounceable Password Generator is a NodeJS script that generates strings of characters in the command line that are ordered in a way that is pronounceable and possibly easier to remember if you wish to memorize them.
+Pronounceable Password Generator is a node.js script that generates strings of characters in the command line that are ordered in a way that is pronounceable and possibly easier to remember if you wish to memorize them.
 
 It could also be used for creating random usernames or for anything where you might want a unique pronounceable string.
+
+This script has been converted to [TypeScript](https://typescriptlang.org) and is compiled to ESNext JavaScript with [Babel](https://babeljs.io/). The script to run with node.js is under the `./dist` directory.
 
 <img alt="Screenshot of propass.js being used in the terminal." title="Warning: Using these samples as passwords is not recommended!" src="/screenshot.png">
 
@@ -10,7 +12,7 @@ It could also be used for creating random usernames or for anything where you mi
 
 * [Installation](#installation)
   * [Binary Releases](#binary-releases)
-  * [Run as a NodeJS Script](#run-as-a-nodejs-script)
+  * [Run as a node.js Script](#run-as-a-node.js-script)
 * [Quick Start](#quick-start)
 * [Advanced Usage](#advanced-usage)
   * [Number of Passwords](#number-of-passwords)
@@ -36,9 +38,9 @@ The latest releases have been packaged as standalone binaries for [MacOS](https:
 
 On MacOS and Linux, you may need to `chmod +x propass` to make it executable. If you will be using `propass` often, you might wish to place it in your PATH.
 
-### Run as a NodeJS Script
+### Run as a node.js Script
 
-**Note**: NodeJS should already be [installed](https://nodejs.dev/learn/how-to-install-nodejs) on your system.
+**Note**: node.js should already be [installed](https://node.js.dev/learn/how-to-install-node.js) on your system.
 
 ```cli
 git clone https://github.com:josh-clarke/propass.git
@@ -46,11 +48,11 @@ cd propass
 npm install
 ```
 
-> To run `propass` as a NodeJS script, you must type `node propass.js` to execute it. In a Bash/ZSH shell you should also be able to `chmod +x propass.js` and then execute `./propass.js` directly. 
+> To run `propass` as a node.js script, you must type `node ./dist/propass.js` to execute it. In a Bash/ZSH shell you should also be able to `chmod +x ./dist/propass.js` and then execute `./dist/propass.js` directly. 
 
 ## Quick Start
 
-Calling `propass` on its own generates three password options with the default settings.
+Calling the `propass` binary on its own generates three password options with the default settings.
 
 ```cli
 ./propass
@@ -157,25 +159,23 @@ cd propass
 npm install
 ```
 
-3. Make any changes that you want to the code or `syllables.json` file.
+3. Enter the `./src` directory and make any changes that you want to the `propass.ts` file or `syllables.json` file.
 
-4. Install the NodeJS module [`pkg`](https://www.npmjs.com/package/pkg). It is used to build the binaries.
+4. Install the node.js module [`pkg`](https://www.npmjs.com/package/pkg) if you do not already have it. It is used to build the binaries.
 
 ```cli
 npm install -g pkg
 ```
 
-5. Run `./build.sh` in a MacOS or Linux terminal, or in a WSL terminal on Windows. 
+5. Run `npm run compile` to compile the TypeScript source into ESNext JavaScript. 
 
-```cli
-./build.sh
-```
+6. Run `npm run build` in a MacOS or Linux terminal, or in a WSL terminal on Windows. 
 
 By default the build script will build binaries for MacOS, Linux, and Windows and bundle them in a .zip archive with the README and LICENSE files. They will appear in a folder called `./build`. The `build.sh` script should be easy to figure out and modify to suit your needs.
 
 ## Included Modules
 
-This script makes use of the [random-seed](https://github.com/skratchdot/random-seed) module, which is a NodeJS port of the [Gibson Research Corporation's Ultra-High Entropy Pseudo-Random Number Generator](https://www.grc.com/otg/uheprng.htm).
+This script makes use of the [random-seed](https://github.com/skratchdot/random-seed) module, which is a node.js port of the [Gibson Research Corporation's Ultra-High Entropy Pseudo-Random Number Generator](https://www.grc.com/otg/uheprng.htm).
 
 It also uses the [Yargs](https://yargs.js.org) module for beautiful handling of command line arguments.
 
