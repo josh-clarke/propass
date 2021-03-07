@@ -159,7 +159,7 @@ cd propass
 npm install
 ```
 
-3. Enter the `./src` directory and make any changes that you want to the `propass.ts` file or `syllables.json` file.
+3. Enter the `./src` directory and make any changes that you want to the `propass.ts` file or `syllables.json` file. If you would like to, you could take a look at the [DEVNOTES.md](https://github.com/josh-clarke/blob/main/DEVNOTES.md) file.
 
 4. Install the node.js module [`pkg`](https://www.npmjs.com/package/pkg) if you do not already have it. It is used to build the binaries.
 
