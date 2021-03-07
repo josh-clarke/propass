@@ -1,0 +1,86 @@
+{
+    "singleConsonants" : [
+        {"char": "b", "weight":  13},
+        {"char": "d", "weight":  8},
+        {"char": "f", "weight":  10},
+        {"char": "g", "weight":  12},
+        {"char": "h", "weight":  9},
+        {"char": "j", "weight":  18},
+        {"char": "k", "weight":  17},
+        {"char": "l", "weight":  8},
+        {"char": "m", "weight":  10},
+        {"char": "n", "weight":  3},
+        {"char": "p", "weight":  13},
+        {"char": "r", "weight":  5},
+        {"char": "s", "weight":  4},
+        {"char": "t", "weight":  1},
+        {"char": "v", "weight":  17},
+        {"char": "w", "weight":  12},
+        {"char": "x", "weight":  17},
+        {"char": "y", "weight":  14},
+        {"char": "z", "weight":  19}
+    ],
+    "doubleConsonants" : [ 
+        {"char": "ch", "weight":  6},
+        {"char": "sh", "weight":  8},
+        {"char": "th", "weight":  8},
+        {"char": "tr", "weight":  7},
+        {"char": "kr", "weight":  12},
+        {"char": "ks", "weight":  20},
+        {"char": "ny", "weight":  19},
+        {"char": "gr", "weight":  10},
+        {"char": "gy", "weight":  19}
+    ],
+    "singleVowels" : [
+        {"char": "a", "weight":  5},
+        {"char": "e", "weight":  1},
+        {"char": "i", "weight":  8},
+        {"char": "o", "weight":  10},
+        {"char": "u", "weight":  14}
+    ],
+    "doubleVowels" : [
+        {"char": "ee", "weight":  12},
+        {"char": "ea", "weight":  6},
+        {"char": "ou", "weight":  7},
+        {"char": "io", "weight":  16},
+        {"char": "oi", "weight":  12},
+        {"char": "ua", "weight":  18},
+        {"char": "au", "weight":  11},
+        {"char": "oo", "weight":  12},
+        {"char": "ay", "weight":  5},
+        {"char": "ey", "weight":  8},
+        {"char": "oy", "weight":  9},
+        {"char": "ae", "weight":  18},
+        {"char": "ai", "weight":  15},
+        {"char": "eu", "weight":  19},
+        {"char": "eo", "weight":  20}
+    ],
+    "numbers" : [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+    ],
+    "symbols" : [
+        "!",
+        "?",
+        ".",
+        "@",
+        "#",
+        "%",
+        "^",
+        "&",
+        "*",
+        "-",
+        "+",
+        "_",
+        "="
+    ]
+
+}
