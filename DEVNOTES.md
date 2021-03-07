@@ -4,7 +4,7 @@ This repository has been a learning experience for me on using node.js, ES6+, Ty
 
 ## File Notes
 
-This offers some explanation definition of the files in this project. It includes basic and more advanced notes. 
+This offers some explanation of the files in this project. It includes basic and more advanced notes. 
 
 **[`.gitignore`](https://github.com/josh-clarke/propass/blob/main/.gitignore)** - This is a simple hidden text file to tell the `git` version control system what files or directories to ignore.
 
