@@ -19,19 +19,21 @@ build/*           # Ignore the binary builds folder. It's unneccessary to commit
 
 * [`babel.config.json`](https://github.com/josh-clarke/propass/blob/main/babel.config.json) - This file lets the Babel compiler know some project specific options for compiling this project.
 
+Here, we let Babel know it is converting from TypeScript
+
 ```json
 {
   "presets": [
     ["@babel/preset-typescript"],   
 ```
-Let Babel know it is converting from TypeScript
+
+Then we tell Babel to output JavaScript that is compatible with the latest node.js
 
 ```json
     ["@babel/preset-env", {
       "targets": {
         "node": "current"           
 ```
-Output JavaScript that is compatible with the latest node.js
 
 * [`build.sh`](https://github.com/josh-clarke/propass/blob/main/build.sh) - This is a `bash` shell script that builds and packages the standalone binaries for MacOS, Linux, and Windows. It requires that the node.js module `pkg` is installed globally. 
 
