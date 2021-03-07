@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 
 // Imports
-import yargs = require('yargs')
-import uheprng = require('random-seed')
+import { yargs } from 'yargs'
+import { uheprng }  from 'random-seed'
 
 interface Syllables {
     'singleConsonants': Array<Array<{'char': string, 'weight': string}>>,

@@ -1,12 +1,10 @@
 #!/usr/bin/env node
-"use strict";
-exports.__esModule = true;
 // Imports
-var yargs = require("yargs");
-var uheprng = require("random-seed");
+import { yargs } from 'yargs';
+import { uheprng } from 'random-seed';
 // Variables
-var syllables = require('./syllables.json');
-var rand = uheprng.create();
+const syllables = require('./syllables.json');
+const rand = uheprng.create();
 /**
  * Parse command line arguments
  */
@@ -21,49 +19,49 @@ yargs
 ])
     .option('p', {
     alias: 'passwords',
-    "default": 3,
+    default: 3,
     describe: 'How many password options',
     type: 'number'
 })
     .option('l', {
     alias: 'lengthpass',
-    "default": 13,
+    default: 13,
     describe: 'Total characters in password',
     type: 'number'
 })
     .option('n', {
     alias: 'numbers',
-    "default": 2,
+    default: 2,
     describe: 'Number characters in password',
     type: 'number'
 })
     .option('s', {
     alias: 'symbols',
-    "default": 1,
+    default: 1,
     describe: 'Symbol characters in password',
     type: 'number'
 })
     .option('c', {
     alias: 'caps',
-    "default": false,
+    default: false,
     describe: 'Include capitals',
     type: 'boolean'
 })
     .option('m', {
     alias: 'mix',
-    "default": false,
+    default: false,
     describe: 'Mix the symbols and numbers randomly into the password',
     type: 'boolean'
 })
     .option('w', {
     alias: 'unweighted',
-    "default": false,
+    default: false,
     describe: 'Ignore the weighting for letter selection',
     type: 'boolean'
 })
     .requiresArg(['p', 'l', 'n', 's'])
     .strictOptions()
-    .check(function (argv, options) {
+    .check((argv, options) => {
     if (argv.p < 1 || argv.p > 250) {
         throw new Error('Please specify a number of passwords between 1 and 250.\n\n“Form is emptiness; emptiness is form. Emptiness is none other than form; form is none other than emptiness.” —The Heart Sutra');
     }
@@ -94,15 +92,15 @@ generatePassword(yargs.argv.lengthpass, yargs.argv.numbers, yargs.argv.symbols, 
  * Generates password based on values specified
  */
 function generatePassword(passwordLength, numbersLength, symbolsLength, optionsLength, caps, mix) {
-    var passwordOptions;
-    var trimValue = numbersLength + symbolsLength;
+    let passwordOptions;
+    let trimValue = numbersLength + symbolsLength;
     // Password Options
-    for (var o = 0; o < optionsLength; o++) {
-        var password = [];
-        var word = passwordLength - trimValue;
-        var precedence = rand(2);
+    for (let o = 0; o < optionsLength; o++) {
+        let password = [];
+        let word = passwordLength - trimValue;
+        let precedence = rand(2);
         // Word Creator
-        for (var x = 0; x < word; x++) {
+        for (let x = 0; x < word; x++) {
             if (x < 2 || x > word - 4) {
                 password.push(doubleSegment(caps, precedence));
                 x = x + 1;
@@ -113,8 +111,8 @@ function generatePassword(passwordLength, numbersLength, symbolsLength, optionsL
                     x = x + 2;
                 }
                 else if ((word - x) % 4 == 0) {
-                    var segment = '';
-                    var doubleOrQuadruple = rand(2);
+                    let segment = '';
+                    let doubleOrQuadruple = rand(2);
                     if (doubleOrQuadruple == 0) {
                         segment = doubleSegment(caps, precedence);
                         segment += doubleSegment(caps, precedence);
@@ -126,8 +124,8 @@ function generatePassword(passwordLength, numbersLength, symbolsLength, optionsL
                     x = x + 3;
                 }
                 else if ((word - x) % 2 == 0) {
-                    var segment = '';
-                    var doubleOrVowels = rand(2);
+                    let segment = '';
+                    let doubleOrVowels = rand(2);
                     if (doubleOrVowels == 0) {
                         segment = doubleSegment(caps, precedence);
                     }
@@ -139,23 +137,23 @@ function generatePassword(passwordLength, numbersLength, symbolsLength, optionsL
                 }
                 else if ((word - x) % 1 == 0) {
                     // If it's prime!
-                    var segment = setLetter(syllables.singleVowels);
+                    let segment = setLetter(syllables.singleVowels);
                     password.push(segment);
                 }
             }
         }
         // Symbol Creator        
-        for (var z = 0; z < symbolsLength; z++) {
-            var randomSymbols = rand(syllables.symbols.length);
+        for (let z = 0; z < symbolsLength; z++) {
+            let randomSymbols = rand(syllables.symbols.length);
             password.push(syllables.symbols[randomSymbols]);
         }
         // Number Creator
-        for (var y = 0; y < numbersLength; y++) {
-            var randomNumbers = rand(syllables.numbers.length);
+        for (let y = 0; y < numbersLength; y++) {
+            let randomNumbers = rand(syllables.numbers.length);
             password.push(syllables.numbers[randomNumbers]);
         }
         if (mix) {
-            var shuffledPass = shuffleArray(password);
+            let shuffledPass = shuffleArray(password);
             passwordOptions += shuffledPass.join('') + '\n';
         }
         else {
@@ -165,9 +163,9 @@ function generatePassword(passwordLength, numbersLength, symbolsLength, optionsL
     console.log(passwordOptions);
 }
 function doubleSegment(caps, precedence) {
-    var consonant = capConsonant(setLetter(syllables.singleConsonants), caps);
-    var vowel = setLetter(syllables.singleVowels);
-    var segment = '';
+    let consonant = capConsonant(setLetter(syllables.singleConsonants), caps);
+    let vowel = setLetter(syllables.singleVowels);
+    let segment = '';
     if (precedence) {
         segment += consonant;
         segment += vowel;
@@ -179,9 +177,9 @@ function doubleSegment(caps, precedence) {
     return segment;
 }
 function tripleSegment(caps, precedence) {
-    var consonant = capConsonant(setLetter(syllables.doubleConsonants), caps);
-    var vowel = setLetter(syllables.singleVowels);
-    var segment = '';
+    let consonant = capConsonant(setLetter(syllables.doubleConsonants), caps);
+    let vowel = setLetter(syllables.singleVowels);
+    let segment = '';
     if (precedence) {
         segment += consonant;
         segment += vowel;
@@ -193,9 +191,9 @@ function tripleSegment(caps, precedence) {
     return segment;
 }
 function quadrupleSegment(caps, precedence) {
-    var consonant = capConsonant(setLetter(syllables.doubleConsonants), caps);
-    var vowel = setLetter(syllables.doubleVowels);
-    var segment = '';
+    let consonant = capConsonant(setLetter(syllables.doubleConsonants), caps);
+    let vowel = setLetter(syllables.doubleVowels);
+    let segment = '';
     if (precedence) {
         segment += consonant;
         segment += vowel;
@@ -215,11 +213,11 @@ function capConsonant(consonant, caps) {
     }
 }
 function shuffleArray(arr) {
-    var id = arr.length;
+    let id = arr.length;
     while (0 !== id) {
-        var randomId = rand(id);
+        let randomId = rand(id);
         id -= 1;
-        var tmp = arr[id];
+        let tmp = arr[id];
         arr[id] = arr[randomId];
         arr[randomId] = tmp;
     }
@@ -227,12 +225,12 @@ function shuffleArray(arr) {
     // https://www.w3docs.com/snippets/javascript/how-to-randomize-shuffle-a-javascript-array.html
 }
 function setLetter(letterOptions) {
-    var isChecking = true;
-    var letter = '';
-    var blacklist = [];
+    let isChecking = true;
+    let letter = '';
+    let blacklist = [];
     while (isChecking) {
-        var thisOption = rand(letterOptions.length);
-        var letterSet = letterOptions[thisOption];
+        let thisOption = rand(letterOptions.length);
+        let letterSet = letterOptions[thisOption];
         if (weightCheck(letterSet[1])) {
             letter = letterSet[0];
             isChecking = false;
@@ -241,7 +239,7 @@ function setLetter(letterOptions) {
     return letter;
 }
 function weightCheck(weight) {
-    var d20 = rand(20) + 1;
+    let d20 = rand(20) + 1;
     if (yargs.argv.unweighted || d20 >= weight) {
         return true;
     }
