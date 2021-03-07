@@ -1,6 +1,6 @@
 # Developer Notes
 
-This repository has been a learning experience for me on using NodeJS, ES6+, Typescript, and modern developer workflows. This Markdown file offers some insight into the files in this repository and a list of some resources that I have referenced.
+This repository has been a learning experience for me on using node.js, ES6+, Typescript, and modern developer workflows. This Markdown file offers some insight into the files in this repository and a list of some resources that I have referenced.
 
 ## File Notes
 
@@ -19,7 +19,7 @@ build/*           # Ignore the binary builds folder. It's unneccessary to commit
 
 * [`babel.config.json`](https://github.com/josh-clarke/propass/blob/main/babel.config.json) - This file lets the Babel compiler know some project specific options for compiling this project.
 
-Here, we let Babel know it is converting from TypeScript
+Here, we let Babel know it is converting from TypeScript:
 
 ```json
 {
@@ -27,7 +27,7 @@ Here, we let Babel know it is converting from TypeScript
     ["@babel/preset-typescript"],   
 ```
 
-Then we tell Babel to output JavaScript that is compatible with the latest node.js
+Then we tell Babel to output JavaScript that is compatible with the latest node.js:
 
 ```json
     ["@babel/preset-env", {
