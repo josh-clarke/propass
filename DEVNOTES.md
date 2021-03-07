@@ -4,7 +4,7 @@ This repository has been a learning experience for me on using NodeJS, ES6+, Typ
 
 ## File Notes
 
-This offers a light definition of the files. It includes basic and more advanced notes. 
+This offers some explanation definition of the files in this project. It includes basic and more advanced notes. 
 
 * [`.gitignore`](https://github.com/josh-clarke/propass/blob/main/.gitignore) - This is a simple hidden text file to tell the `git` version control system what files or directories to ignore.
 
@@ -38,7 +38,7 @@ Output JavaScript that is compatible with the latest node.js
 ```bash
 # build.sh
 
-#!/usr/bin/env bash
+#!/usr/bin/env bashgi
 
 ##
 # Check if the 'pkg' command is available to the system. If it is
