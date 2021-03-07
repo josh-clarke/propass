@@ -33,12 +33,12 @@ Let Babel know it is converting from TypeScript
 ```
 Output JavaScript that is compatible with the latest node.js
 
-* [`build.sh`](https://github.com/josh-clarke/propass/blob/main/build.sh) - This is a `bash` shell script that build and packages the standalone binaries for MacOS, Linux, and Windows. It requires that the node.js module `pkg` is installed globally. 
+* [`build.sh`](https://github.com/josh-clarke/propass/blob/main/build.sh) - This is a `bash` shell script that builds and packages the standalone binaries for MacOS, Linux, and Windows. It requires that the node.js module `pkg` is installed globally. 
 
 ```bash
 # build.sh
 
-#!/usr/bin/env bashgi
+#!/usr/bin/env bash
 
 ##
 # Check if the 'pkg' command is available to the system. If it is
