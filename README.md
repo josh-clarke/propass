@@ -52,7 +52,7 @@ npm install
 
 ## Quick Start
 
-Calling `propass` on its own generates three password options with the default settings.
+Calling the `propass` binary on its own generates three password options with the default settings.
 
 ```cli
 ./propass
