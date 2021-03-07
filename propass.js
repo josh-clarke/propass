@@ -244,14 +244,13 @@ function shuffleArray(arr) {
 function setLetter(letterOptions) {
     let isChecking = true
     let letter = ''
-    let blacklist = []
 
     while (isChecking) {
         let thisOption = rand(letterOptions.length)
         let letterSet = letterOptions[thisOption]
 
-        if(weightCheck(letterSet[1])) {
-            letter = letterSet[0]
+        if(weightCheck(letterSet.weight)) {
+            letter = letterSet.char
             isChecking = false
         }
     }
