@@ -46,7 +46,7 @@ const argv: Arguments = yargs.scriptName('propass')
     type: 'number'
   })
   .option('l', {
-    alias: 'lengthpass',
+    alias: 'length',
     default: 13,
     describe: 'Total characters in password',
     type: 'number'

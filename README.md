@@ -85,10 +85,10 @@ You can set how many password options you get with the `--passwords` or `-p` fla
 ```
 
 ### Password Length
-The length of the password options can be changed with the `--lengthpass` or `-l` flag. The example will list passwords that are 20 characters long.
+The length of the password options can be changed with the `--length` or `-l` flag. The example will list passwords that are 20 characters long.
 
 ```cli
-./propass --lengthpass 20
+./propass --length 20
 ```
 
 > One source suggests that a good password is [at least 12 characters](https://resources.infosecinstitute.com/topic/password-security-complexity-vs-length/). Another suggests that a [16 character all lowercase password would take 208 billion minutes to crack](https://specopssoft.com/blog/password-length-best-practices/) with today's computers.
@@ -100,7 +100,7 @@ The amount of numbers or symbols in a password can be set with `--numbers` or `-
 The example creates passwords that include 3 numbers and 3 symbols. The length has also been set to 16 total characters.
 
 ```cli
-./propass --symbols 3 --numbers 3 --lengthpass 16
+./propass --symbols 3 --numbers 3 --length 16
 ```
 
 ### Capital Letters

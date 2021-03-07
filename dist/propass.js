@@ -19,7 +19,7 @@ const argv = _yargs.default.scriptName('propass').usage('$0 <cmd> [args]').examp
   describe: 'How many password options',
   type: 'number'
 }).option('l', {
-  alias: 'lengthpass',
+  alias: 'length',
   default: 13,
   describe: 'Total characters in password',
   type: 'number'
